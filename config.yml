@@ -1,0 +1,524 @@
+# This is an example configuration file that documents all the options.
+# It will need to be modified for your specific use case.
+# Please refer to the link below for more details on how to set up the configuration file
+# https://github.com/StuffAnThings/qbit_manage/wiki/Config-Setup
+
+# qBittorrent parameters
+qbt:
+  host: qbittorrent-vpn:8080
+  user: (redacted)
+  pass: (redacted)
+
+settings:
+  force_auto_tmm: false
+  tracker_error_tag: issue
+  nohardlinks_tag: noHL
+  share_limits_tag: ~share_limit
+  ignoreTags_OnUpdate: # When running tag-update function, it will update torrent tags for a given torrent even if the torrent has one or more of the tags defined here.
+  - noHL
+  - issue
+  - cross-seed
+
+directory:
+  cross_seed: /cross-seed/
+  root_dir: /data/torrents/
+  remote_dir: /data/torrents/
+  recycle_bin: /data/torrents/.RecycleBin
+  torrents_dir: /qbit_appdata
+  orphaned_dir: /data/torrents/orphaned_data
+
+cat:
+  bhdstudio-1080p: /data/torrents/movies
+  bhdstudio-1080p.cross-seed: /data/torrents/movies
+  bhdstudio-2160p: /data/torrents/movies-4k
+  bhdstudio-2160p.cross-seed: /data/torrents/movies-4k
+  cross-seed-data: /data/torrents/cross-seed-data
+  cross-seed-data.cross-seed: /data/torrents/cross-seed-data
+  framestor-1080p: /data/torrents/movies-4k
+  framestor-1080p.cross-seed: /data/torrents/movies-4k
+  framestor-2160p: /data/torrents/movies-4k
+  framestor-2160p.cross-seed: /data/torrents/movies-4k
+  movies: /data/torrents/movies
+  movies-completed: /data/torrents/movies
+  movies-completed.cross-seed: /data/torrents/movies
+  movies.cross-seed: /data/torrents/movies
+  movies-4k: /data/torrents/movies-4k
+  movies-4k-completed: /data/torrents/movies-4k
+  movies-4k-completed.cross-seed: /data/torrents/movies-4k
+  movies-4k.cross-seed: /data/torrents/movies-4k
+  music: /data/torrents/music
+  music-completed: /data/torrents/music
+  music-completed.cross-seed: /data/torrents/music
+  music.cross-seed: /data/torrents/music
+  ratio: /data/torrents/ratio
+  ratio.cross-seed: /data/torrents/ratio
+  tv: /data/torrents/tv
+  tv-4k: /data/torrents/tv-4k
+  tv-4k-completed: /data/torrents/tv-4k
+  tv-4k-completed.cross-seed: /data/torrents/tv-4k
+  tv-4k.cross-seed: /data/torrents/tv-4k
+  tv-completed: /data/torrents/tv
+  tv-completed.cross-seed: /data/torrents/tv
+  tv.cross-seed: /data/torrents/tv
+  books: /data/torrents/books
+  books-completed: /data/torrents/books
+  books.cross-seed: /data/torrents/books
+  books-completed.cross-seed: /data/torrents/books
+  rescue: /data/torrents/rescue
+  rescue.cross-seed: /data/torrents/rescue
+
+cat_change:
+  movies.cross-seed: movies-completed.cross-seed
+  movies-4k.cross-seed: movies-4k-completed.cross-seed
+  tv.cross-seed: tv-completed.cross-seed
+  tv-4k.cross-seed: tv-4k-completed.cross-seed
+
+tracker:
+  tleechreload:
+    tag: TorrentLeech
+  torrentleech:
+    tag: TorrentLeech
+  cinemaz:
+    tag: Cinemaz
+  localhost.stackoverflow.tech:
+    tag: IPTorrents
+  routing.bgp.technology:
+    tag: IPTorrents
+  ssl.empirehost.me:
+    tag: IPTorrents
+  immortalseed.me:
+    tag: Immortalseed
+  digitalcore.club:
+    tag: Digitalcore
+  hawke.uno:
+    tag: hawke-uno
+  blutopia.xyz:
+    tag: Blutopia
+  blutopia.cc:
+    tag: Blutopia
+  hdts-announce.ru:
+    tag: HDTorrents
+  reactor.filelist.io:
+    tag: FileList
+  reactor.flro.org:
+    tag: FileList
+  beyond-hd:
+    tag: Beyond-HD
+  tracker.morethantv.me:
+    tag: MoreThanTV
+  tracker.privatehd.to:
+    tag: PrivateHD
+  tracker.scenetime.com:
+    tag: SceneTime
+  superbits.org:
+    tag: SuperBits
+  sptracker.cc:
+    tag: SuperBits
+  hd-space.pw:
+    tag: HD-Space
+  lst.gg:
+    tag: LST
+  td.jumbohostpro.eu:
+    tag: TorrentDay
+  sync.td-peers.com:
+    tag: TorrentDay
+  aither.cc:
+    tag: Aither
+  uhdbits.org:
+    tag: UHDBits
+  tracker.anthelion.me:
+    tag: Anthelion
+  tracker.alpharatio.cc:
+    tag: AlphaRatio
+  ramjet.speedappio.org:
+    tag: SpeedApp
+
+nohardlinks:
+- bhdstudio-1080p
+- bhdstudio-1080p.cross-seed
+- bhdstudio-2160p
+- bhdstudio-2160p.cross-seed
+- cross-seed-data
+- cross-seed-data.cross-seed
+- framestor-1080p
+- framestor-1080p.cross-seed
+- framestor-2160p
+- framestor-2160p.cross-seed
+- movies-completed
+- movies-completed.cross-seed
+- movies.cross-seed
+- movies-4k-completed
+- movies-4k-completed.cross-seed
+- movies-4k.cross-seed
+- music-completed
+- music-completed.cross-seed
+- music.cross-seed
+- ratio
+- ratio.cross-seed
+- tv-4k-completed
+- tv-4k-completed.cross-seed
+- tv-4k.cross-seed
+- tv-completed
+- tv-completed.cross-seed
+- tv.cross-seed
+- books-completed
+- books-completed.cross-seed
+- books.cross-seed
+- rescue
+- rescue.cross-seed
+
+share_limits:
+  tier_1.noHL:
+    priority: 1
+    include_any_tags:
+    - Beyond-HD
+    include_all_tags:
+    - noHL
+    categories:
+    - bhdstudio-1080p
+    - bhdstudio-1080p.cross-seed
+    - bhdstudio-2160p
+    - bhdstudio-2160p.cross-seed
+    - cross-seed-data
+    - cross-seed-data.cross-seed
+    - framestor-1080p
+    - framestor-1080p.cross-seed
+    - framestor-2160p
+    - framestor-2160p.cross-seed
+    - movies-completed
+    - movies-completed.cross-seed
+    - movies.cross-seed
+    - movies-4k-completed
+    - movies-4k-completed.cross-seed
+    - movies-4k.cross-seed
+    - music-completed
+    - music-completed.cross-seed
+    - music.cross-seed
+    - ratio
+    - ratio.cross-seed
+    - tv-4k-completed
+    - tv-4k-completed.cross-seed
+    - tv-4k.cross-seed
+    - tv-completed
+    - tv-completed.cross-seed
+    - tv.cross-seed
+    - books-completed
+    - books-completed.cross-seed
+    - books.cross-seed
+    - rescue.cross-seed
+    max_ratio: -1
+    max_seeding_time: 129600
+    limit_upload_speed: -1
+    cleanup: true
+    add_group_to_tag: false
+  tier_1:
+    priority: 2
+    include_any_tags:
+    - Beyond-HD
+    categories:
+    - bhdstudio-1080p
+    - bhdstudio-1080p.cross-seed
+    - bhdstudio-2160p
+    - bhdstudio-2160p.cross-seed
+    - cross-seed-data
+    - cross-seed-data.cross-seed
+    - framestor-1080p
+    - framestor-1080p.cross-seed
+    - framestor-2160p
+    - framestor-2160p.cross-seed
+    - movies-completed
+    - movies-completed.cross-seed
+    - movies.cross-seed
+    - movies-4k-completed
+    - movies-4k-completed.cross-seed
+    - movies-4k.cross-seed
+    - music-completed
+    - music-completed.cross-seed
+    - music.cross-seed
+    - ratio
+    - ratio.cross-seed
+    - tv-4k-completed
+    - tv-4k-completed.cross-seed
+    - tv-4k.cross-seed
+    - tv-completed
+    - tv-completed.cross-seed
+    - tv.cross-seed
+    - books-completed
+    - books-completed.cross-seed
+    - books.cross-seed
+    - rescue.cross-seed
+    max_ratio: -1
+    max_seeding_time: -1
+    limit_upload_speed: -1
+    cleanup: true
+    add_group_to_tag: false
+  tier_2.noHL_cross-seed:
+    priority: 3
+    include_any_tags:
+    - Blutopia
+    - hawke-uno
+    - MoreThanTV
+    - UHDBits
+    - Aither
+    include_all_tags:
+    - noHL
+    categories:
+    - bhdstudio-1080p.cross-seed
+    - bhdstudio-2160p.cross-seed
+    - cross-seed-data
+    - cross-seed-data.cross-seed
+    - framestor-1080p.cross-seed
+    - framestor-2160p.cross-seed
+    - movies-completed.cross-seed
+    - movies.cross-seed
+    - movies-4k-completed.cross-seed
+    - movies-4k.cross-seed
+    - music-completed.cross-seed
+    - music.cross-seed
+    - ratio.cross-seed
+    - tv-4k-completed.cross-seed
+    - tv-4k.cross-seed
+    - tv-completed.cross-seed
+    - tv.cross-seed
+    - books-completed.cross-seed
+    - books.cross-seed
+    - rescue.cross-seed
+    max_ratio: -1
+    max_seeding_time: 44640
+    limit_upload_speed: 2048
+    cleanup: true
+    add_group_to_tag: false
+  tier_2.noHL:
+    priority: 4
+    include_any_tags:
+    - Blutopia
+    - hawke-uno
+    - MoreThanTV
+    - UHDBits
+    - Aither
+    include_all_tags:
+    - noHL
+    categories:
+    - bhdstudio-1080p
+    - bhdstudio-2160p
+    - framestor-1080p
+    - framestor-2160p
+    - movies-completed
+    - movies-4k-completed
+    - music-completed
+    - ratio
+    - tv-4k-completed
+    - tv-completed
+    - books-completed
+    max_ratio: -1
+    max_seeding_time: 64800
+    limit_upload_speed: 2048
+    cleanup: true
+    add_group_to_tag: false
+  tier_2:
+    priority: 5
+    include_any_tags:
+    - Blutopia
+    - hawke-uno
+    - MoreThanTV
+    - UHDBits
+    - Aither
+    categories:
+    - bhdstudio-1080p
+    - bhdstudio-1080p.cross-seed
+    - bhdstudio-2160p
+    - bhdstudio-2160p.cross-seed
+    - cross-seed-data
+    - cross-seed-data.cross-seed
+    - framestor-1080p
+    - framestor-1080p.cross-seed
+    - framestor-2160p
+    - framestor-2160p.cross-seed
+    - movies-completed
+    - movies-completed.cross-seed
+    - movies.cross-seed
+    - movies-4k-completed
+    - movies-4k-completed.cross-seed
+    - movies-4k.cross-seed
+    - music-completed
+    - music-completed.cross-seed
+    - music.cross-seed
+    - ratio
+    - ratio.cross-seed
+    - tv-4k-completed
+    - tv-4k-completed.cross-seed
+    - tv-4k.cross-seed
+    - tv-completed
+    - tv-completed.cross-seed
+    - tv.cross-seed
+    - books-completed
+    - books-completed.cross-seed
+    - books.cross-seed
+    - rescue.cross-seed
+    max_ratio: -1
+    max_seeding_time: -1
+    limit_upload_speed: 2048
+    cleanup: true
+    add_group_to_tag: false
+  tier_3.noHL:
+    priority: 6
+    include_any_tags:
+    - FileList
+    - HDTorrents
+    - TorrentLeech
+    - Cinemaz
+    - IPTorrents
+    - Immortalseed
+    - Digitalcore
+    - PrivateHD
+    - SceneTime
+    - SuperBits
+    - HD-Space
+    - LST
+    - TorrentDay
+    - Anthelion
+    - SpeedApp
+    include_all_tags:
+    - noHL
+    categories:
+    - bhdstudio-1080p
+    - bhdstudio-1080p.cross-seed
+    - bhdstudio-2160p
+    - bhdstudio-2160p.cross-seed
+    - cross-seed-data
+    - cross-seed-data.cross-seed
+    - framestor-1080p
+    - framestor-1080p.cross-seed
+    - framestor-2160p
+    - framestor-2160p.cross-seed
+    - movies-completed
+    - movies-completed.cross-seed
+    - movies.cross-seed
+    - movies-4k-completed
+    - movies-4k-completed.cross-seed
+    - movies-4k.cross-seed
+    - music-completed
+    - music-completed.cross-seed
+    - music.cross-seed
+    - ratio
+    - ratio.cross-seed
+    - tv-4k-completed
+    - tv-4k-completed.cross-seed
+    - tv-4k.cross-seed
+    - tv-completed
+    - tv-completed.cross-seed
+    - tv.cross-seed
+    - books-completed
+    - books-completed.cross-seed
+    - books.cross-seed
+    - rescue.cross-seed
+    max_ratio: -1
+    max_seeding_time: 44640
+    limit_upload_speed: 1024
+    cleanup: true
+    add_group_to_tag: false
+  tier_3:
+    priority: 7
+    include_any_tags:
+    - FileList
+    - HDTorrents
+    - TorrentLeech
+    - Cinemaz
+    - IPTorrents
+    - Immortalseed
+    - Digitalcore
+    - PrivateHD
+    - SceneTime
+    - SuperBits
+    - HD-Space
+    - LST
+    - TorrentDay
+    - Anthelion
+    - SpeedApp
+    categories:
+    - bhdstudio-1080p
+    - bhdstudio-1080p.cross-seed
+    - bhdstudio-2160p
+    - bhdstudio-2160p.cross-seed
+    - cross-seed-data
+    - cross-seed-data.cross-seed
+    - framestor-1080p
+    - framestor-1080p.cross-seed
+    - framestor-2160p
+    - framestor-2160p.cross-seed
+    - movies-completed
+    - movies-completed.cross-seed
+    - movies.cross-seed
+    - movies-4k-completed
+    - movies-4k-completed.cross-seed
+    - movies-4k.cross-seed
+    - music-completed
+    - music-completed.cross-seed
+    - music.cross-seed
+    - ratio
+    - ratio.cross-seed
+    - tv-4k-completed
+    - tv-4k-completed.cross-seed
+    - tv-4k.cross-seed
+    - tv-completed
+    - tv-completed.cross-seed
+    - tv.cross-seed
+    - books-completed
+    - books-completed.cross-seed
+    - books.cross-seed
+    - rescue.cross-seed
+    max_ratio: -1
+    max_seeding_time: -1
+    limit_upload_speed: 1024
+    cleanup: true
+    add_group_to_tag: false
+  rescue:
+    priority: 8
+    include_all_tags:
+    - Beyond-HD
+    categories:
+    - rescue
+    max_ratio: -1
+    max_seeding_time: -1
+    limit_upload_speed: -1
+    cleanup: true
+    add_group_to_tag: false
+
+recyclebin:
+  enabled: true
+  empty_after_x_days: 3
+  save_torrents: true
+  split_by_category: false
+
+orphaned:
+  exclude_patterns:
+  - '**/.DS_Store'
+  - '**/Thumbs.db'
+  - '**/@eaDir'
+  - /data/torrents/temp/**
+  - '**/*.!qB'
+  - '**/_unpackerred'
+  empty_after_x_days: 3
+
+notifiarr:
+  apikey: (redacted)
+  instance: qBittorrent-VPN
+
+webhooks:
+  error: notifiarr
+  run_start: notifiarr
+  run_end: notifiarr
+  function:
+    cross_seed: notifiarr
+    recheck: notifiarr
+    cat_update: notifiarr
+    tag_update: notifiarr
+    rem_unregistered: notifiarr
+    rem_orphaned: notifiarr
+    tag_nohardlinks: notifiarr
+    empty_recyclebin: notifiarr
+    tag_tracker_error: notifiarr
+    share_limits: notifiarr
+
+bhd:
+  apikey: (redacted)
