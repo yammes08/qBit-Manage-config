@@ -1,0 +1,2 @@
+# qbitmanage-config
+qBitmanage Configuration
