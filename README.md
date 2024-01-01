@@ -1,2 +1,2 @@
-# qbitmanage-config
-qBitmanage Configuration
+# qBit-Manage-config
+qBit Manage configuration
